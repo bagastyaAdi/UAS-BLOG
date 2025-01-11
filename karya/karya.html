@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="karya.css" />
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ICON -->
+    <link rel="stylesheet" href="/fontawesome-free-6.6.0-web/css/all.css" />
+
+    <title>DAV Blog</title>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <div id="navbar">
+        <div class="label">
+          <img src="/img/DAV BLOG LOGO.png" alt="logo dav blog" />
+        </div>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/karya/karya.html">Buat Karya</a></li>
+          <li><a id="logout-btn" href="">Log Out</a></li>
+        </ul>
+        <div class="icon-menu">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+    <!-- AKHIR NAVBAR -->
+
+        <!-- FORM CREATE -->
+        <section>
+          <div class="bg">
+            <div class="tittle">
+              <h1 id="tulis-karya">TULIS KARYA</h1>
+              <p>Yuk tulis karya kamu</p>
+            </div>
+    
+            <div class="form-create">
+              <form  enctype="multipart/form-data"
+              class="story-form"
+              method="POST"
+              onsubmit="handleFormSubmit(event)"
+              id="create-form"
+              novalidate>
+                <div class="cover">
+                  <div class="image">
+                    <label for="image">Unggah Gambar</label> <br />
+                    <input type="file" name="image" id="image" accept="/img/*" onchange="previewImage(event)" required/>
+                </div>
+                
+                <div class="input">
+                  <img
+                    id="img-view"
+                    src=""
+                    alt="Gambar"
+                    style="display: none; width: 100px; height: auto"
+                  />
+                </div>
+    
+                  <div class="judul">
+                    <label for="title">Judul</label> <br />
+                    <input type="text" name="title" id="title" placeholder="Tulis judul kamu disini" required/>
+                  </div>
+      
+                  <div class="cerita">
+                    <label for="content">Tulis Karya</label> <br />
+                    <textarea name="content" id="content" placeholder="Mulai tulis cerita kamu"></textarea>
+                  </div>
+      
+                <div class="submit">
+                  <input type="submit" name="submit" value="Buat Karya" />
+                </div>
+              </form>
+            </div>
+          </div>
+         </section>
+        <!-- AKHIR FORM CREATE -->
+
+    <!-- TABLE BLOG -->
+    <section class="daf-karya">
+      <div class="tittle">
+        <h1>DAFTAR KARYA</h1>
+        <p></p>
+      </div>
+      <div class="teble-karya">
+        <table id="daftarKarya" class="tabel-karya"></table>
+      </div>
+    </section>
+    <!-- AKHIR TABLE BLOG -->
+
+    <script src="/js/api.js"></script>
+    <script>
+      const menuToggle = document.querySelector(".icon-menu input");
+      const nav = document.querySelector("#navbar ul");
+
+      menuToggle.addEventListener("click", function () {
+        nav.classList.toggle("slide");
+      });
+    </script>
+  </body>
+</html>

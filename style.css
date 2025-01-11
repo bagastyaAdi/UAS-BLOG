@@ -1,0 +1,289 @@
+@import url(/color.css);
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  overflow-x: hidden !important;
+}
+
+/* NAVBAR */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 99999;
+  background-color: var(--accent);
+}
+
+.label img {
+  width: 100px;
+}
+
+#navbar {
+  display: flex;
+  background-color: var(--accent);
+  height: 60px;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0px 0px 25px #c5c5c5;
+}
+
+#navbar ul {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+
+#navbar ul li a {
+  color: var(--primary-color);
+  font-weight: 500;
+  padding: 10px 5px;
+  transition: 0.2s;
+}
+
+#navbar ul li a:hover {
+  background-color: var(--primary-color);
+  color: var(--accent);
+  padding: 10px 5px;
+}
+
+#navbar .icon-menu {
+  position: relative;
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+}
+
+#navbar .icon-menu input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -6px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#navbar .icon-menu span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: var(--primary-color);
+  border-radius: 3px;
+}
+/* AKHIR NAVBAR */
+
+/* MAIN */
+#main {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 90vh;
+}
+
+.profile-img {
+  width: 480px;
+  height: 350px;
+  overflow: hidden;
+}
+.profile-img img {
+  width: 100%;
+}
+
+.hero p i {
+  color: var(--primary-color);
+}
+
+.hero h1 {
+  font-size: 68px;
+}
+
+.hero h1 span {
+  color: var(--primary-color);
+}
+
+.hero .pass {
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+.profile-img img {
+  width: 100%;
+}
+/* AKHIR MAIN */
+
+/* ABOUT */
+#about .cover {
+  background-color: var(--accent);
+  margin: 50px auto;
+  width: 70%;
+  height: 150px;
+  padding: 50px;
+  box-shadow: 0px 0px 25px #c5c5c5;
+  border: 1px solid var(--primary-color);
+}
+.tittle {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.desk {
+  text-align: justify;
+}
+/* AKHIR ABOUT */
+
+/* FOOTER */
+#footer {
+  text-align: center;
+  margin-top: 100px;
+  height: 30vh;
+  background-color: var(--primary-color);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.name-footer img {
+  width: 100px;
+  margin-top: 10px;
+}
+
+.name-footer h3 {
+  font-size: 30px;
+  color: var(--accent);
+}
+
+.copyright p {
+  color: white;
+  text-align: center;
+  margin: 20px 0px;
+}
+/* AKHIR FOOTER */
+
+/* RESPONSIVE */
+@media only screen and (max-width: 800px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Main */
+  #main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 90vh;
+  }
+
+  .profile-img {
+    margin-top: 100px;
+    width: 240px;
+    height: 320px;
+    overflow: hidden;
+  }
+
+  .hero h1 {
+    font-size: 58px;
+  }
+
+  .hero .pass {
+    font-size: 12px;
+    font-weight: bolder;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  /* Main */
+  .profile-img {
+    display: none;
+    margin-top: 100px;
+    width: 240px;
+    height: 320px;
+    overflow: hidden;
+  }
+
+  .hero h1 {
+    font-size: 68px;
+  }
+
+  .hero .pass {
+    font-size: 12px;
+    font-weight: bolder;
+  }
+
+  /* ABOUT */
+  #about .cover {
+    background-color: var(--accent);
+    margin: 50px auto;
+    width: 70%;
+    height: 200px;
+    padding: 50px;
+    box-shadow: 0px 0px 25px #c5c5c5;
+    border: 1px solid var(--primary-color);
+  }
+  .tittle {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  /* AKHIR ABOUT */
+}
+
+@media only screen and (max-width: 426px) {
+  html {
+    overflow-x: hidden !important;
+  }
+
+  /* NAVBAR */
+  nav {
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  #navbar ul {
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-evenly !important;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    background-color: var(--primary-color);
+    text-align: center;
+    z-index: -1;
+    transform: translateX(100%);
+    transition: all 1s;
+  }
+
+  #navbar ul.slide {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  #navbar ul li a {
+    color: var(--accent) !important;
+    font-weight: 500;
+    padding: 10px 5px;
+  }
+
+  #navbar ul li a:hover {
+    background-color: var(--primary-color);
+    color: var(--accent);
+    padding: 10px 5px;
+    border-radius: 5px;
+  }
+
+  #navbar .icon-menu {
+    display: flex !important;
+  }
+
+  /* AKHIR NAVBAR */
+}

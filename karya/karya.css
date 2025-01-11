@@ -1,0 +1,286 @@
+@import url(/color.css);
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  overflow-x: hidden !important;
+}
+
+/* NAVBAR */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 99999;
+  background-color: var(--accent);
+}
+
+.label img {
+  width: 100px;
+}
+
+#navbar {
+  display: flex;
+  background-color: var(--accent);
+  height: 60px;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0px 0px 25px #c5c5c5;
+}
+
+#navbar ul {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+
+#navbar ul li a {
+  color: var(--primary-color);
+  font-weight: 500;
+  padding: 10px 5px;
+  transition: 0.2s;
+}
+
+#navbar ul li a:hover {
+  background-color: var(--primary-color);
+  color: var(--accent);
+  padding: 10px 5px;
+}
+
+#navbar .icon-menu {
+  position: relative;
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+}
+
+#navbar .icon-menu input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -6px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#navbar .icon-menu span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: var(--primary-color);
+  border-radius: 3px;
+}
+/* AKHIR NAVBAR */
+
+/* FORM CREATE */
+.bg {
+  height: max-content;
+}
+
+.tittle {
+  margin-top: 50px;
+  text-align: center;
+}
+.cover {
+  display: block;
+  width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 25px #c5c5c5;
+}
+
+.form-create {
+  margin: 0px auto;
+  display: table;
+  width: 75%;
+}
+
+.judul,
+.cerita,
+img {
+  margin: 20px 0px;
+}
+
+.cerita textarea {
+  width: 100%;
+  height: 100px;
+  padding: 5px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  border: 0.5px solid var(--primary-color);
+  border-radius: 2px;
+}
+
+.judul input {
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  border: 0.5px solid var(--primary-color);
+  border-radius: 2px;
+}
+
+.image input {
+  width: 50%;
+  height: 40px;
+  padding: 10px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  border: 0.5px solid var(--primary-color);
+  border-radius: 2px;
+}
+
+/* Submit */
+.submit input {
+  width: 100%;
+  height: 30px;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  margin-top: 20px;
+}
+
+.submit input:hover {
+  background-color: var(--accent);
+  color: var(--primary-color);
+  border: 0.5px solid var(--primary-color);
+  cursor: pointer;
+}
+/* Akhir Submit */
+/* AKHIR FORM CREATE */
+
+/* TABEL KARYA */
+#daftarKarya {
+  margin-top: 50px;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--second-color);
+  table-layout: auto;
+}
+
+#daftarKarya th {
+  background-color: var(--primary-color);
+  color: var(--accent);
+}
+
+#daftarKarya th,
+#daftarKarya td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+#daftarKarya tbody tr:nth-of-type(even) {
+  background-color: var(--second-color);
+}
+
+#daftarKarya tbody tr:nth-of-type(odd) {
+  background-color: #ffffff;
+}
+
+#daftarKarya th {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#daftarKarya td {
+  font-size: 14px;
+}
+
+#daftarKarya .edit-btn {
+  background-color: var(--primary-color);
+  padding: 5px 10px;
+  color: var(--accent);
+  border: none;
+  border-radius: 5px;
+}
+
+#daftarKarya .delete-btn {
+  background-color: red;
+  padding: 5px 10px;
+  color: var(--accent);
+  border: none;
+  border-radius: 5px;
+}
+
+#daftarKarya .delete-btn:hover {
+  color: red;
+  background: none;
+  border: 1px solid red;
+  cursor: pointer;
+}
+
+#daftarKarya .edit-btn:hover {
+  color: var(--primary-color);
+  background: none;
+  border: 1px solid var(--primary-color);
+  cursor: pointer;
+}
+/* AKHIR TABEL KARYA */
+
+/* RESPONSIVE */
+@media only screen and (max-width: 426px) {
+  html {
+    overflow-x: hidden !important;
+  }
+
+  /* NAVBAR */
+  nav {
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  #navbar ul {
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-evenly !important;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    background-color: var(--primary-color);
+    text-align: center;
+    z-index: -1;
+    transform: translateX(100%);
+    transition: all 1s;
+  }
+
+  #navbar ul.slide {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  #navbar ul li a {
+    color: var(--accent) !important;
+    font-weight: 500;
+    padding: 10px 5px;
+  }
+
+  #navbar ul li a:hover {
+    background-color: var(--primary-color);
+    color: var(--accent);
+    padding: 10px 5px;
+    border-radius: 5px;
+  }
+
+  #navbar .icon-menu {
+    display: flex !important;
+  }
+  /* AKHIR NAVBAR */
+
+  /* FORM */
+  .bg {
+    margin-top: 100px;
+  }
+}
