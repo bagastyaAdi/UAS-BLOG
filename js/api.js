@@ -180,15 +180,12 @@ async function getBlogs() {
   }
 }
 
-// Submit form handler
 async function handleFormSubmit(event) {
-  event.preventDefault(); // Hentikan perilaku default form
+  event.preventDefault();
 
-  // Ambil elemen form dan dataset
   const storyForm = document.getElementById("create-form");
   const blogId = storyForm.dataset.blogId || null;
 
-  // Ambil nilai form
   const title = document.getElementById("title").value.trim();
   const content = document.getElementById("content").value.trim();
   const imageInput = document.getElementById("image");
@@ -197,7 +194,7 @@ async function handleFormSubmit(event) {
 
   // Validasi input
   if (!title || !content || (!image && !blogId)) {
-    alert("Semua field harus diisi!");
+    alert("Mohon mengisi semua data!");
     return;
   }
 
