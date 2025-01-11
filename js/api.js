@@ -8,9 +8,9 @@ const getToken = () => localStorage.getItem("token");
 document.addEventListener("DOMContentLoaded", () => {
   const token = getToken();
 
-  if (!token && window.location.pathname.includes("/index.html")) {
+  if (!token && window.location.pathname.includes("index.html")) {
     alert("Please log in first!");
-    window.location.href = "/login/login.html";
+    window.location.href = "login/login.html";
   }
 
   if (token && window.location.pathname.includes("/karya/karya.html")) {
