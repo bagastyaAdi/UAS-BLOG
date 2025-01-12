@@ -42,7 +42,7 @@ if (loginForm) {
       if (response.ok) {
         localStorage.setItem("token", data.token);
         alert("Anda Berhasil Log In!");
-        window.location.href = "/index.html";
+        window.location.href = "../index.html";
       } else {
         alert(data.message || "Cek Kembali Data Anda!");
       }
@@ -88,7 +88,7 @@ if (registerForm) {
       const data = await response.json();
       if (response.ok) {
         alert("Anda Berhasil Mendaftar, Mohon untuk Log In!");
-        window.location.href = "/login/login.html";
+        window.location.href = "../login/login.html";
       } else {
         alert(data.message || "Anda gagal mendaftar!");
       }
@@ -105,7 +105,7 @@ if (logoutButton) {
   logoutButton.addEventListener("click", () => {
     localStorage.removeItem("token");
     alert("Logged out successfully!");
-    window.location.href = "/login/login.html";
+    window.location.href = "../login/login.html";
   });
 }
 
@@ -115,7 +115,7 @@ async function getBlogs() {
 
   if (!token) {
     alert("Unauthorized! Please log in.");
-    window.location.href = "/login/login.html";
+    window.location.href = "../login/login.html";
     return;
   }
 
@@ -283,7 +283,7 @@ async function deleteBlog(id) {
 
   if (!token) {
     alert("Unauthorized! Please log in.");
-    window.location.href = "/login/login.html";
+    window.location.href = "../login/login.html";
     return;
   }
 
