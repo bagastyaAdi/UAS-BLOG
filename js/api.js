@@ -244,6 +244,7 @@ async function handleFormSubmit(event) {
       alert(
         blogId ? "Blog berhasil diperbarui!" : "Blog berhasil ditambahkan!"
       );
+      location.reload();
       storyForm.reset(); // Reset form setelah pengiriman
       delete storyForm.dataset.blogId; // Hapus blogId dari dataset
       document.getElementById("image").style.display = "none"; // Sembunyikan pratinjau gambar
