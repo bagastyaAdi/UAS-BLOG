@@ -77,7 +77,6 @@ if (registerForm) {
       const response = await fetch(`${API_BASE_URL}/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        mode: 'no-cors', // Bypass CORS
         body: JSON.stringify({
           name,
           email,
@@ -242,14 +241,13 @@ async function handleFormSubmit(event) {
     const result = await response.json();
 
     if (result) {
+      location.reload();
       alert(
         blogId ? "Blog berhasil diperbarui!" : "Blog berhasil ditambahkan!"
       );
-      location.reload();
-      storyForm.reset(); // Reset form setelah pengiriman
-      delete storyForm.dataset.blogId; // Hapus blogId dari dataset
-      document.getElementById("image").style.display = "none"; // Sembunyikan pratinjau gambar
-      // Tambahkan logika untuk memuat ulang daftar blog jika diperlukan
+      storyForm.reset();
+      delete storyForm.dataset.blogId;
+      document.getElementById("image").style.display = "none";
     } else {
       alert("Respons kosong dari server.");
     }
